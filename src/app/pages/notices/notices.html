@@ -1,0 +1,33 @@
+<section class="py-24 bg-slate-50 min-h-screen">
+    <div class="max-w-4xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <h1 class="text-5xl font-bold text-slate-900 mb-6 relative inline-block">
+                Notices & Announcements
+                <div class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-indigo-500 rounded-full"></div>
+            </h1>
+            <p class="text-xl text-slate-500 font-light mt-8">Important updates and information from the school administration.</p>
+        </div>
+
+        <div class="space-y-6">
+            @for (notice of allNotices; track notice.id) {
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-8 flex flex-col md:flex-row md:items-start gap-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                    <div class="md:w-36 flex-shrink-0">
+                        <div class="bg-blue-50/50 text-blue-700 text-sm font-bold uppercase tracking-wide rounded-xl p-3 text-center w-full border border-blue-100/50">
+                            {{ notice.date }}
+                        </div>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex flex-wrap items-center gap-3 mb-3">
+                            <h2 class="text-2xl font-bold text-slate-800 group-hover:text-blue-600 transition-colors">{{ notice.title }}</h2>
+                            <span class="text-xs px-3 py-1 bg-slate-100 text-slate-600 rounded-full font-medium tracking-wide uppercase">{{ notice.category }}</span>
+                        </div>
+                        <p class="text-slate-600 leading-relaxed font-light mb-4">{{ notice.description }}</p>
+                        <button class="text-blue-600 text-sm font-bold tracking-wide uppercase group-hover:gap-1 flex items-center transition-all">
+                            Read more <span class="opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-1 transition-all ml-1">&rarr;</span>
+                        </button>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
