@@ -54,6 +54,12 @@
         },
         "serve": {
           "builder": "@angular/build:dev-server",
+          "options": {
+            "allowedHosts": [
+              "deanne-sophomoric-hettie.ngrok-free.dev"
+            ],
+            "proxyConfig": "src/proxy.conf.json"
+          },
           "configurations": {
             "production": {
               "buildTarget": "school-frontend:build:production"
